@@ -24,5 +24,10 @@ public class TrianglesTest {
         assertEquals(tr.printVLine(3), "*\n*\n*");
     }
 
+    @Test
+    public void printTriangle() {
+        assertEquals(tr.printTriangle(3), "*\n**\n***");
+    }
+
 
 }

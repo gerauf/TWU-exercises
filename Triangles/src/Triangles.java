@@ -15,6 +15,19 @@ public class Triangles {
         return printer(times, "*\n");
     }
 
+    String printTriangle(int times){
+        String answer = "";
+
+        for ( int x = 1; x <= times; x++ ){
+            for ( int y = 1; y <= x; y++ ){
+                answer = answer.concat("*");
+            }
+            answer = answer.concat("\n");
+
+        }
+        return answer.trim();
+    }
+
 
     private String printer(int times, String pattern){
         String answer = "";
