@@ -7,13 +7,23 @@ public class Triangles {
         return "*";
     }
 
-    String printN(int times){
-        int x = 0;
+    String printHLine(int times){
         String answer = "";
-        while(x<times){
+
+        for(int x = 0; x<times; x++){
             answer = answer.concat("*");
-            x++;
         }
+
         return answer;
+    }
+
+    String printVLine(int times){
+        String answer = "";
+
+        for(int x = 0; x<times; x++){
+            answer = answer.concat("*\n");
+        }
+
+        return answer.trim();
     }
 }

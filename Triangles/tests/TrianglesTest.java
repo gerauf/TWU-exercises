@@ -15,8 +15,13 @@ public class TrianglesTest {
     }
 
     @Test
-    public void printN() {
-        assertEquals(tr.printN(8), "********");
+    public void printHLine() {
+        assertEquals(tr.printHLine(8), "********");
+    }
+
+    @Test
+    public void printVLine() {
+        assertEquals(tr.printVLine(3), "*\n*\n*");
     }
 
 
