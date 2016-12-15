@@ -39,5 +39,10 @@ public class TrianglesTest {
         assertEquals(tr.printDiamond(3), "  *  \n *** \n*****\n *** \n  *  ");
     }
 
+    @Test
+    public void printNameDiamond() {
+        assertEquals(tr.printNameDiamond("Fergus", 3), "  *  \n *** \nFergus\n *** \n  *  ");
+    }
+
 
 }

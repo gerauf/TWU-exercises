@@ -36,6 +36,12 @@ public class Triangles {
         return removeLast(answer);
     }
 
+    String printNameDiamond(String name, int times){
+        String answer = "";
+        answer = answer + isoHelper(times - 1, true, " ") + name + "\n" + isoHelper(times - 1, false, " ");
+        return removeLast(answer);
+    }
+
 
 
 
