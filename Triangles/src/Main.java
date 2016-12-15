@@ -1,6 +1,8 @@
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+	Triangles tr = new Triangles();
+
+	System.out.println(tr.printOne());
     }
 }
