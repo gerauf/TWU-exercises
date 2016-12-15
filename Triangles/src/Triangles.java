@@ -26,20 +26,15 @@ public class Triangles {
     }
 
     String printIsoTriangle(int times){
-
         return removeLast(isoHelper(times, true, ""));
     }
 
     String printDiamond(int times){
-        String answer = "";
-        answer = answer + isoHelper(times, true, "") + isoHelper(times - 1, false, " ");
-        return removeLast(answer);
+        return removeLast(isoHelper(times, true, "") + isoHelper(times - 1, false, " "));
     }
 
     String printNameDiamond(String name, int times){
-        String answer = "";
-        answer = answer + isoHelper(times - 1, true, " ") + name + "\n" + isoHelper(times - 1, false, " ");
-        return removeLast(answer);
+        return removeLast(isoHelper(times - 1, true, " ") + name + "\n" + isoHelper(times - 1, false, " "));
     }
 
 
@@ -63,17 +58,20 @@ public class Triangles {
         String answer = "";
         if(ascending){
             for ( int x = 1; x <= times; x++ ) {
-                answer = answer + centeredLine(times - x, 2 * x - 1, buffer);
+                answer = answer + centeredLine(times, x, buffer);
             }
         }else {
             for ( int x = times; x >= 1; x-- ) {
-                answer = answer + centeredLine(times - x, 2 * x - 1, buffer);
+                answer = answer + centeredLine(times, x, buffer);
             }
         }
         return answer;
     }
 
-    private String centeredLine(int spaceLength, int starLength, String buffer){
+    private String centeredLine(int totalLines, int lineNumber, String buffer){
+        int spaceLength = totalLines - lineNumber;
+        int starLength = 2 * lineNumber - 1;
+
         return buffer
                 + strRepeat(" ", spaceLength)
                 + strRepeat("*", starLength)
