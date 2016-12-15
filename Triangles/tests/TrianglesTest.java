@@ -7,10 +7,16 @@ import static org.junit.Assert.*;
  */
 public class TrianglesTest {
 
+    Triangles tr = new Triangles();
+
     @Test
     public void printOne() {
-        Triangles tr = new Triangles();
         assertEquals(tr.printOne(), "*");
+    }
+
+    @Test
+    public void printN() {
+        assertEquals(tr.printN(8), "********");
     }
 
 

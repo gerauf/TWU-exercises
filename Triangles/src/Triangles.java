@@ -6,4 +6,14 @@ public class Triangles {
     String printOne(){
         return "*";
     }
+
+    String printN(int times){
+        int x = 0;
+        String answer = "";
+        while(x<times){
+            answer = answer.concat("*");
+            x++;
+        }
+        return answer;
+    }
 }
