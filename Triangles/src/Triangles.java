@@ -1,3 +1,4 @@
+
 /**
  * Created by fergyo on 15/12/2016.
  */
@@ -8,34 +9,47 @@ public class Triangles {
     }
 
     String printHLine(int times){
-        return printer(times, "*");
+        return strRepeat("*", times);
     }
 
     String printVLine(int times){
-        return printer(times, "*\n");
+        String answer = strRepeat("*\n", times);
+        return removeLast(answer);
     }
 
     String printTriangle(int times){
         String answer = "";
 
         for ( int x = 1; x <= times; x++ ){
-            for ( int y = 1; y <= x; y++ ){
-                answer = answer.concat("*");
-            }
-            answer = answer.concat("\n");
-
+            answer = answer + strRepeat("*", x) + "\n";
         }
-        return answer.trim();
+        return removeLast(answer);
+    }
+
+    String printIsoTriangle(int times){
+        String answer = "";
+
+        for (int x = 1; x<=times; x++ ){
+            int spaceLength = times - x;
+            int starLength = 2 * x - 1;
+            answer = answer + strRepeat(" ", spaceLength) + strRepeat("*", starLength) + strRepeat(" ", spaceLength) + "\n";
+        }
+
+        return removeLast(answer);
     }
 
 
-    private String printer(int times, String pattern){
+    private String strRepeat(String pattern, int times){
         String answer = "";
 
         for(int x = 0; x<times; x++){
             answer = answer.concat(pattern);
         }
 
-        return answer.trim();
+        return answer;
+    }
+
+    private String removeLast(String someString){
+        return someString.substring(0,someString.length()-1);
     }
 }

@@ -29,5 +29,10 @@ public class TrianglesTest {
         assertEquals(tr.printTriangle(3), "*\n**\n***");
     }
 
+    @Test
+    public void printIsoTriangle() {
+        assertEquals(tr.printIsoTriangle(3), "  *  \n *** \n*****");
+    }
+
 
 }
