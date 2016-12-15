@@ -8,20 +8,19 @@ public class Triangles {
     }
 
     String printHLine(int times){
-        String answer = "";
-
-        for(int x = 0; x<times; x++){
-            answer = answer.concat("*");
-        }
-
-        return answer;
+        return printer(times, "*");
     }
 
     String printVLine(int times){
+        return printer(times, "*\n");
+    }
+
+
+    private String printer(int times, String pattern){
         String answer = "";
 
         for(int x = 0; x<times; x++){
-            answer = answer.concat("*\n");
+            answer = answer.concat(pattern);
         }
 
         return answer.trim();
